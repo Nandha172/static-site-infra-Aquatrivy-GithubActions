@@ -92,7 +92,7 @@ jobs:
         working-directory: envs/dev
 
       - name: Upload Terraform plan artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: tfplan
           path: envs/dev/tfplan.binary
