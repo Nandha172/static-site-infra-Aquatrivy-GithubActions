@@ -148,7 +148,7 @@ jobs:
         working-directory: envs/dev
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan.binary -var-file=terraform.tfvars
+        run: terraform plan -out=tfplan.binary -var-file=terraform.tfvars -lock=false
         working-directory: envs/dev
 
       - name: Upload Terraform plan artifact
@@ -159,5 +159,5 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve tfplan.binary -var-file=terraform.tfvars
+        run: terraform apply -auto-approve -lock=false tfplan.binary -var-file=terraform.tfvars
         working-directory: envs/dev
