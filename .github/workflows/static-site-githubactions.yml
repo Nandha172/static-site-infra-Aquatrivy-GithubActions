@@ -88,7 +88,7 @@ jobs:
         run: terraform plan -out=tfplan.binary
 
       - name: Upload Terraform plan artifact
-        uses: actions/upload-artifact@v
+        uses: actions/upload-artifact@master
         with:
           name: tfplan
           path: tfplan.binary
