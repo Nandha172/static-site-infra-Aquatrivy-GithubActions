@@ -200,7 +200,8 @@ jobs:
           scan-type: config
           scan-ref: ./envs/dev
           severity: HIGH,MEDIUM,LOW
-          exit-code: 0
+#          exit-code: 0
+          exit-code: 1
           format: table
 
       - name: Terraform Format Check
