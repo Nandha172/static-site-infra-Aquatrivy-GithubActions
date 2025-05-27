@@ -165,13 +165,13 @@
 
 name: Terraform CI/CD
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   terraform:
@@ -199,7 +199,7 @@ jobs:
         with:
           scan-type: config
           scan-ref: ./envs/dev
-          severity: HIGH,MEDIUM,LOW
+          severity: CRITICAL,HIGH,MEDIUM,LOW
 #          exit-code: 0
           exit-code: 1
           format: table
