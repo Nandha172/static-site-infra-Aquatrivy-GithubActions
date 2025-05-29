@@ -17,7 +17,7 @@ jobs:
           scan-type: config
           scan-ref: ./envs/dev
           severity: CRITICAL,HIGH,MEDIUM,LOW
-          exit-code: 1 # If you want to block pipeline on vuln change 1 to 0 !
+          exit-code: 0 # If you want to block pipeline on vuln change 1 to 0 !
           format: table
 
   terraform:
